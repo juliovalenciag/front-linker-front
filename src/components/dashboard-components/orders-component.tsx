@@ -25,24 +25,24 @@ function OrderComponent() {
                         className="sm:col-span-2" x-chunk="dashboard-05-chunk-0"
                     >
                         <CardHeader className="pb-3">
-                            <CardTitle>Your Orders</CardTitle>
+                            <CardTitle>Donations</CardTitle>
                             <CardDescription className="max-w-lg text-balance leading-relaxed">
-                                Introducing Our Dynamic Orders Dashboard for Seamless
+                                Introducing Our Dynamic Donations Dashboard for Seamless
                                 Management and Insightful Analysis.
                             </CardDescription>
                         </CardHeader>
                         <CardFooter>
-                            <Button>Create New Order</Button>
+                            <Button>Do a new Donation</Button>
                         </CardFooter>
                     </Card>
                     <Card x-chunk="dashboard-05-chunk-1">
                         <CardHeader className="pb-2">
                             <CardDescription>This Week</CardDescription>
-                            <CardTitle className="text-4xl">$1,329</CardTitle>
+                            <CardTitle className="text-4xl">1,329</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="text-xs text-muted-foreground">
-                                +25% from last week
+                                Tons from last week
                             </div>
                         </CardContent>
                         <CardFooter>
@@ -52,11 +52,11 @@ function OrderComponent() {
                     <Card x-chunk="dashboard-05-chunk-2">
                         <CardHeader className="pb-2">
                             <CardDescription>This Month</CardDescription>
-                            <CardTitle className="text-4xl">$5,329</CardTitle>
+                            <CardTitle className="text-4xl">5,329</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="text-xs text-muted-foreground">
-                                +10% from last month
+                                Tons from last month
                             </div>
                         </CardContent>
                         <CardFooter>
@@ -110,18 +110,18 @@ function OrderComponent() {
                     <TabsContent value="week">
                         <Card x-chunk="dashboard-05-chunk-3">
                             <CardHeader className="px-7">
-                                <CardTitle>Orders</CardTitle>
+                                <CardTitle>Donations</CardTitle>
                                 <CardDescription>
-                                    Recent orders from your store.
+                                    Recent donations from the past week
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <Table>
                                     <TableHeader>
                                         <TableRow>
-                                            <TableHead>Customer</TableHead>
+                                            <TableHead>Donator</TableHead>
                                             <TableHead className="hidden sm:table-cell">
-                                                Type
+                                                Beneficiary
                                             </TableHead>
                                             <TableHead className="hidden sm:table-cell">
                                                 Status
@@ -135,43 +135,43 @@ function OrderComponent() {
                                     <TableBody>
                                         <TableRow className="bg-accent">
                                             <TableCell>
-                                                <div className="font-medium">Liam Johnson</div>
+                                                <div className="font-medium">Walmart</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    liam@example.com
+                                                    North
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                Sale
+                                                 Comedor La Güera
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
                                                 <Badge className="text-xs" variant="secondary">
-                                                    Fulfilled
+                                                    Accepted
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="hidden md:table-cell">
                                                 2023-06-23
                                             </TableCell>
-                                            <TableCell className="text-right">$250.00</TableCell>
+                                            <TableCell className="text-right">250 tons</TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell>
-                                                <div className="font-medium">Olivia Smith</div>
+                                                <div className="font-medium">Chedraui</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    olivia@example.com
+                                                    La Viga
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                Refund
+                                                Comedor Samuel
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                <Badge className="text-xs" variant="outline">
-                                                    Declined
+                                                <Badge className="text-xs" variant="secondary">
+                                                    Accepted
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="hidden md:table-cell">
                                                 2023-06-24
                                             </TableCell>
-                                            <TableCell className="text-right">$150.00</TableCell>
+                                            <TableCell className="text-right">150 tons</TableCell>
                                         </TableRow>
                                         {/* <TableRow>
                           <TableCell>
@@ -195,103 +195,63 @@ function OrderComponent() {
                         </TableRow> */}
                                         <TableRow>
                                             <TableCell>
-                                                <div className="font-medium">Noah Williams</div>
+                                                <div className="font-medium">Walmart</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    noah@example.com
+                                                    Tlalpan
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                Subscription
+                                                Comedor La Viga
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
                                                 <Badge className="text-xs" variant="secondary">
-                                                    Fulfilled
+                                                    Accepted
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="hidden md:table-cell">
                                                 2023-06-25
                                             </TableCell>
-                                            <TableCell className="text-right">$350.00</TableCell>
+                                            <TableCell className="text-right">350 tons</TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell>
-                                                <div className="font-medium">Emma Brown</div>
+                                                <div className="font-medium">Zorro</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    emma@example.com
+                                                    Iztapalapa
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                Sale
+                                                Comedor Comunitario
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
                                                 <Badge className="text-xs" variant="secondary">
-                                                    Fulfilled
+                                                    Accepted
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="hidden md:table-cell">
                                                 2023-06-26
                                             </TableCell>
-                                            <TableCell className="text-right">$450.00</TableCell>
+                                            <TableCell className="text-right">450 tons</TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell>
-                                                <div className="font-medium">Liam Johnson</div>
+                                                <div className="font-medium">Soriana</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    liam@example.com
+                                                    Centro Històrico
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
-                                                Sale
+                                                Comedor Pùblico
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
                                                 <Badge className="text-xs" variant="secondary">
-                                                    Fulfilled
+                                                    Accepted
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="hidden md:table-cell">
                                                 2023-06-23
                                             </TableCell>
-                                            <TableCell className="text-right">$250.00</TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>
-                                                <div className="font-medium">Olivia Smith</div>
-                                                <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    olivia@example.com
-                                                </div>
-                                            </TableCell>
-                                            <TableCell className="hidden sm:table-cell">
-                                                Refund
-                                            </TableCell>
-                                            <TableCell className="hidden sm:table-cell">
-                                                <Badge className="text-xs" variant="outline">
-                                                    Declined
-                                                </Badge>
-                                            </TableCell>
-                                            <TableCell className="hidden md:table-cell">
-                                                2023-06-24
-                                            </TableCell>
-                                            <TableCell className="text-right">$150.00</TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>
-                                                <div className="font-medium">Emma Brown</div>
-                                                <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    emma@example.com
-                                                </div>
-                                            </TableCell>
-                                            <TableCell className="hidden sm:table-cell">
-                                                Sale
-                                            </TableCell>
-                                            <TableCell className="hidden sm:table-cell">
-                                                <Badge className="text-xs" variant="secondary">
-                                                    Fulfilled
-                                                </Badge>
-                                            </TableCell>
-                                            <TableCell className="hidden md:table-cell">
-                                                2023-06-26
-                                            </TableCell>
-                                            <TableCell className="text-right">$450.00</TableCell>
+                                            <TableCell className="text-right">250 tons</TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </Table>
@@ -307,7 +267,7 @@ function OrderComponent() {
                     <CardHeader className="flex flex-row items-start bg-muted/50">
                         <div className="grid gap-0.5">
                             <CardTitle className="group flex items-center gap-2 text-lg">
-                                Order Oe31b70H
+                                Donation Oe31b70H
                                 <Button
                                     size="icon"
                                     variant="outline"
@@ -323,7 +283,7 @@ function OrderComponent() {
                             <Button size="sm" variant="outline" className="h-8 gap-1">
                                 <Truck className="h-3.5 w-3.5"/>
                                 <span className="lg:sr-only xl:not-sr-only xl:whitespace-nowrap">
-                      Track Order
+                      Track
                     </span>
                             </Button>
                             <DropdownMenu>
@@ -344,38 +304,26 @@ function OrderComponent() {
                     </CardHeader>
                     <CardContent className="p-6 text-sm">
                         <div className="grid gap-3">
-                            <div className="font-semibold">Order Details</div>
+                            <div className="font-semibold">Details</div>
                             <ul className="grid gap-3">
                                 <li className="flex items-center justify-between">
                       <span className="text-muted-foreground">
-                        Glimmer Lamps x <span>2</span>
+                        Apples
                       </span>
-                                    <span>$250.00</span>
+                                    <span>0.25 tons</span>
                                 </li>
                                 <li className="flex items-center justify-between">
                       <span className="text-muted-foreground">
-                        Aqua Filters x <span>1</span>
+                        Potatoes
                       </span>
-                                    <span>$49.00</span>
+                                    <span>0.49 tons</span>
                                 </li>
                             </ul>
                             <Separator className="my-2"/>
                             <ul className="grid gap-3">
-                                <li className="flex items-center justify-between">
-                                    <span className="text-muted-foreground">Subtotal</span>
-                                    <span>$299.00</span>
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span className="text-muted-foreground">Shipping</span>
-                                    <span>$5.00</span>
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span className="text-muted-foreground">Tax</span>
-                                    <span>$25.00</span>
-                                </li>
                                 <li className="flex items-center justify-between font-semibold">
                                     <span className="text-muted-foreground">Total</span>
-                                    <span>$329.00</span>
+                                    <span>0.74 tons</span>
                                 </li>
                             </ul>
                         </div>
@@ -384,7 +332,7 @@ function OrderComponent() {
                             <div className="grid gap-3">
                                 <div className="font-semibold">Shipping Information</div>
                                 <address className="grid gap-0.5 not-italic text-muted-foreground">
-                                    <span>Liam Johnson</span>
+                                    <span>Comedor Pùblico</span>
                                     <span>1234 Main St.</span>
                                     <span>Anytown, CA 12345</span>
                                 </address>
@@ -398,17 +346,11 @@ function OrderComponent() {
                         </div>
                         <Separator className="my-4"/>
                         <div className="grid gap-3">
-                            <div className="font-semibold">Customer Information</div>
+                            <div className="font-semibold">Beneficiary Information</div>
                             <dl className="grid gap-3">
                                 <div className="flex items-center justify-between">
-                                    <dt className="text-muted-foreground">Customer</dt>
-                                    <dd>Liam Johnson</dd>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <dt className="text-muted-foreground">Email</dt>
-                                    <dd>
-                                        <a href="mailto:">liam@acme.com</a>
-                                    </dd>
+                                    <dt className="text-muted-foreground">Beneficiary</dt>
+                                    <dd>Comedor Público</dd>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <dt className="text-muted-foreground">Phone</dt>
@@ -419,18 +361,6 @@ function OrderComponent() {
                             </dl>
                         </div>
                         <Separator className="my-4"/>
-                        <div className="grid gap-3">
-                            <div className="font-semibold">Payment Information</div>
-                            <dl className="grid gap-3">
-                                <div className="flex items-center justify-between">
-                                    <dt className="flex items-center gap-1 text-muted-foreground">
-                                        <CreditCard className="h-4 w-4"/>
-                                        Visa
-                                    </dt>
-                                    <dd>**** **** **** 4532</dd>
-                                </div>
-                            </dl>
-                        </div>
                     </CardContent>
                     <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
                         <div className="text-xs text-muted-foreground">
@@ -441,13 +371,13 @@ function OrderComponent() {
                                 <PaginationItem>
                                     <Button size="icon" variant="outline" className="h-6 w-6">
                                         <ChevronLeft className="h-3.5 w-3.5"/>
-                                        <span className="sr-only">Previous Order</span>
+                                        <span className="sr-only">Previous Donation</span>
                                     </Button>
                                 </PaginationItem>
                                 <PaginationItem>
                                     <Button size="icon" variant="outline" className="h-6 w-6">
                                         <ChevronRight className="h-3.5 w-3.5"/>
-                                        <span className="sr-only">Next Order</span>
+                                        <span className="sr-only">Next Donation</span>
                                     </Button>
                                 </PaginationItem>
                             </PaginationContent>
