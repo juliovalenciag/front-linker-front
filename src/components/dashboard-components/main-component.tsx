@@ -1,9 +1,9 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Progress} from "@/components/ui/progress";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import {Badge} from "@/components/ui/badge";
 import {
     DropdownMenu, DropdownMenuCheckboxItem,
     DropdownMenuContent, DropdownMenuItem,
@@ -18,6 +18,8 @@ import {
     Copy,
     CreditCard,
     DollarSign,
+    Apple,
+    Bean,
     File,
     ListFilter,
     MoreVertical,
@@ -36,52 +38,52 @@ function MainContent() {
                 <Card x-chunk="dashboard-01-chunk-0">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">
-                            Total Revenue
+                            Total Collected
                         </CardTitle>
-                        <DollarSign className="h-4 w-4 text-muted-foreground"/>
+                        <Apple className="h-4 w-4 text-muted-foreground"/>
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">$45,231.89</div>
+                        <div className="text-2xl font-bold">25,231.89</div>
                         <p className="text-xs text-muted-foreground">
-                            +20.1% from last month
+                            Tons from last month
                         </p>
                     </CardContent>
                 </Card>
                 <Card x-chunk="dashboard-01-chunk-1">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">
-                            Subscriptions
+                            Donators
                         </CardTitle>
                         <Users className="h-4 w-4 text-muted-foreground"/>
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">+2350</div>
+                        <div className="text-2xl font-bold">350</div>
                         <p className="text-xs text-muted-foreground">
-                            +180.1% from last month
+                            From last month
                         </p>
                     </CardContent>
                 </Card>
                 <Card x-chunk="dashboard-01-chunk-2">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Sales</CardTitle>
+                        <CardTitle className="text-sm font-medium">Beneficiaries</CardTitle>
                         <CreditCard className="h-4 w-4 text-muted-foreground"/>
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">+12,234</div>
+                        <div className="text-2xl font-bold">234</div>
                         <p className="text-xs text-muted-foreground">
-                            +19% from last month
+                            From last month
                         </p>
                     </CardContent>
                 </Card>
                 <Card x-chunk="dashboard-01-chunk-3">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Active Now</CardTitle>
-                        <Activity className="h-4 w-4 text-muted-foreground"/>
+                        <CardTitle className="text-sm font-medium">Compost</CardTitle>
+                        <Bean className="h-4 w-4 text-muted-foreground"/>
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">+573</div>
+                        <div className="text-2xl font-bold">4,325</div>
                         <p className="text-xs text-muted-foreground">
-                            +201 since last hour
+                            Tons since last month
                         </p>
                     </CardContent>
                 </Card>
@@ -92,9 +94,9 @@ function MainContent() {
                 >
                     <CardHeader className="flex flex-row items-center">
                         <div className="grid gap-2">
-                            <CardTitle>Transactions</CardTitle>
+                            <CardTitle>Donations</CardTitle>
                             <CardDescription>
-                                Recent transactions from your store.
+                                Recent donations.
                             </CardDescription>
                         </div>
                         <Button asChild size="sm" className="ml-auto gap-1">
@@ -108,7 +110,9 @@ function MainContent() {
                         <Table>
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>Customer</TableHead>
+                                    <TableHead>
+                                        Donators
+                                    </TableHead>
                                     <TableHead className="hidden xl:table-column">
                                         Type
                                     </TableHead>
@@ -124,9 +128,9 @@ function MainContent() {
                             <TableBody>
                                 <TableRow>
                                     <TableCell>
-                                        <div className="font-medium">Liam Johnson</div>
+                                        <div className="font-medium">Walmart</div>
                                         <div className="hidden text-sm text-muted-foreground md:inline">
-                                            liam@example.com
+                                            &nbsp;&nbsp; North
                                         </div>
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
@@ -140,13 +144,13 @@ function MainContent() {
                                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                                         2023-06-23
                                     </TableCell>
-                                    <TableCell className="text-right">$250.00</TableCell>
+                                    <TableCell className="text-right">250 tons</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <div className="font-medium">Olivia Smith</div>
+                                        <div className="font-medium">Costco</div>
                                         <div className="hidden text-sm text-muted-foreground md:inline">
-                                            olivia@example.com
+                                            &nbsp;&nbsp;  Arboledas
                                         </div>
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
@@ -160,17 +164,17 @@ function MainContent() {
                                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                                         2023-06-24
                                     </TableCell>
-                                    <TableCell className="text-right">$150.00</TableCell>
+                                    <TableCell className="text-right">150 tons</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <div className="font-medium">Noah Williams</div>
+                                        <div className="font-medium">Chedraui</div>
                                         <div className="hidden text-sm text-muted-foreground md:inline">
-                                            noah@example.com
+                                            &nbsp;&nbsp;  Iztapalapa
                                         </div>
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
-                                        Subscription
+
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
                                         <Badge className="text-xs" variant="outline">
@@ -180,13 +184,13 @@ function MainContent() {
                                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                                         2023-06-25
                                     </TableCell>
-                                    <TableCell className="text-right">$350.00</TableCell>
+                                    <TableCell className="text-right">350 tons</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <div className="font-medium">Emma Brown</div>
+                                        <div className="font-medium">Supply Center</div>
                                         <div className="hidden text-sm text-muted-foreground md:inline">
-                                            emma@example.com
+                                            &nbsp;&nbsp;  Iztapalapa
                                         </div>
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
@@ -200,13 +204,13 @@ function MainContent() {
                                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                                         2023-06-26
                                     </TableCell>
-                                    <TableCell className="text-right">$450.00</TableCell>
+                                    <TableCell className="text-right">450 tons</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <div className="font-medium">Liam Johnson</div>
+                                        <div className="font-medium">Soriana</div>
                                         <div className="hidden text-sm text-muted-foreground md:inline">
-                                            liam@example.com
+                                            &nbsp;&nbsp;  Viaducto
                                         </div>
                                     </TableCell>
                                     <TableCell className="hidden xl:table-column">
@@ -220,7 +224,7 @@ function MainContent() {
                                     <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
                                         2023-06-27
                                     </TableCell>
-                                    <TableCell className="text-right">$550.00</TableCell>
+                                    <TableCell className="text-right">110 tons</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
@@ -228,83 +232,83 @@ function MainContent() {
                 </Card>
                 <Card x-chunk="dashboard-01-chunk-5">
                     <CardHeader>
-                        <CardTitle>Recent Sales</CardTitle>
+                        <CardTitle>Donations Received</CardTitle>
                     </CardHeader>
                     <CardContent className="grid gap-8">
                         <div className="flex items-center gap-4">
                             <Avatar className="hidden h-9 w-9 sm:flex">
                                 <AvatarImage src="/avatars/01.png" alt="Avatar"/>
-                                <AvatarFallback>OM</AvatarFallback>
+                                <AvatarFallback>CS</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
                                 <p className="text-sm font-medium leading-none">
-                                    Olivia Martin
+                                    Comedor Samuel
                                 </p>
                                 <p className="text-sm text-muted-foreground">
-                                    olivia.martin@email.com
+                                    Repùblica de Venezuela 72 Edificio Mercado Pùblico
                                 </p>
                             </div>
-                            <div className="ml-auto font-medium">+$1,999.00</div>
+                            <div className="ml-auto font-medium">400 tons</div>
                         </div>
                         <div className="flex items-center gap-4">
                             <Avatar className="hidden h-9 w-9 sm:flex">
                                 <AvatarImage src="/avatars/02.png" alt="Avatar"/>
-                                <AvatarFallback>JL</AvatarFallback>
+                                <AvatarFallback>CP</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
                                 <p className="text-sm font-medium leading-none">
-                                    Jackson Lee
+                                    Comedor Público Arenal 6
                                 </p>
                                 <p className="text-sm text-muted-foreground">
-                                    jackson.lee@email.com
+                                    Maxtla 11 B, 15640 Venustiano Carranza
                                 </p>
                             </div>
-                            <div className="ml-auto font-medium">+$39.00</div>
+                            <div className="ml-auto font-medium">39 tons</div>
                         </div>
                         <div className="flex items-center gap-4">
                             <Avatar className="hidden h-9 w-9 sm:flex">
                                 <AvatarImage src="/avatars/03.png" alt="Avatar"/>
-                                <AvatarFallback>IN</AvatarFallback>
+                                <AvatarFallback>CG</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
                                 <p className="text-sm font-medium leading-none">
-                                    Isabella Nguyen
+                                    Comedor La Güera Local 36 Y 37
                                 </p>
                                 <p className="text-sm text-muted-foreground">
-                                    isabella.nguyen@email.com
+                                    Retorno 5 General Ignacio Zaragoza 240
                                 </p>
                             </div>
-                            <div className="ml-auto font-medium">+$299.00</div>
+                            <div className="ml-auto font-medium">50 tons</div>
                         </div>
                         <div className="flex items-center gap-4">
                             <Avatar className="hidden h-9 w-9 sm:flex">
                                 <AvatarImage src="/avatars/04.png" alt="Avatar"/>
-                                <AvatarFallback>WK</AvatarFallback>
+                                <AvatarFallback>CT</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
                                 <p className="text-sm font-medium leading-none">
-                                    William Kim
+                                    Comedor Popular Tichis
                                 </p>
                                 <p className="text-sm text-muted-foreground">
-                                    will@email.com
+                                    Calle Puente Correo Mayor 15 Lote 12
                                 </p>
                             </div>
-                            <div className="ml-auto font-medium">+$99.00</div>
+                            <div className="ml-auto font-medium">99 tons</div>
                         </div>
                         <div className="flex items-center gap-4">
                             <Avatar className="hidden h-9 w-9 sm:flex">
                                 <AvatarImage src="/avatars/05.png" alt="Avatar"/>
-                                <AvatarFallback>SD</AvatarFallback>
+                                <AvatarFallback>CV</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
                                 <p className="text-sm font-medium leading-none">
-                                    Sofia Davis
+                                    Comedor Comunitario 354 La Vikinga
                                 </p>
                                 <p className="text-sm text-muted-foreground">
-                                    sofia.davis@email.com
+                                    15 94, 15000 Ciudad de México
                                 </p>
                             </div>
-                            <div className="ml-auto font-medium">+$39.00</div>
+                            <div className="ml-auto font-medium">40 tons</div>
                         </div>
                     </CardContent>
                 </Card>
