@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {Apple} from "lucide-react";
+import ButtonAuth from "@/components/ButtonAuth";
+import {SessionProvider} from "next-auth/react";
 
 export default function Home() {
     return (
@@ -14,7 +16,8 @@ export default function Home() {
             <Navbar/>
             <section
                 className="h-screen w-full  bg-neutral-950 rounded-md  !overflow-visible relative flex flex-col items-center  antialiased">
-                <div className="absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
+                <div
+                    className="absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
                 <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
                     <ContainerScroll titleComponent={
                         <div className="flex items-center flex-col">
@@ -22,10 +25,12 @@ export default function Home() {
                                 size={'sm'}
                                 className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit border-t-2 rounded-full border-[#4D4D4D] bg-[#F25C05] hover:bg-[#F29A2E] group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
                             >
+                                <Link href="sign-up">
                             <span
                                 className="bg-clip-text text-white bg-gradient-to-r from-neutral-500 to-neutral-600  md:text-center font-sans  group-hover:from-white goup-hover:to-white group-hover:bg-gradient-to-r">
                                 Get Started Now
                             </span>
+                                </Link>
                             </Button>
                             <h1 className="text-5xl md:text-8xl  bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
                                 Waste Less, Feed More
@@ -51,7 +56,7 @@ export default function Home() {
                         <h2 className='mt-2 font-bold text-4xl text-white sm:text-5xl'>
                             Join the fight against food waste and hunger
                         </h2>
-                        <p className='mt-4 text-lg text-gray-600'>
+                        <p className='mt-4 text-lg text-gray-400'>
                             Connecting surplus food to fight hunger and waste.
                         </p>
                     </div>
@@ -66,12 +71,12 @@ export default function Home() {
                 Step 1
               </span>
                             <span className='text-xl font-semibold'>
-                Sign up for an account
+                If you are a shelter, register!
               </span>
-                            <span className='mt-2 text-zinc-700'>
-                If you already have an account, please{' '}
+                            <span className='mt-2 text-zinc-500'>
+                Or if you already have an account, please{' '}
                                 <Link
-                                    href='/pricing'
+                                    href='/sign-in'
                                     className='text-primary underline underline-offset-2'>
                   sign in.
                 </Link>
@@ -86,10 +91,10 @@ export default function Home() {
                 Step 2
               </span>
                             <span className='text-xl font-semibold'>
-                Follow the intructions after
+                Find a charity or let them find you
               </span>
-                            <span className='mt-2 text-zinc-700'>
-                We&apos;ll help you through the path
+                            <span className='mt-2 text-zinc-500'>
+                Don&apos;t forget to enable your location
               </span>
                         </div>
                     </li>
@@ -100,10 +105,10 @@ export default function Home() {
                 Step 3
               </span>
                             <span className='text-xl font-semibold'>
-                Start helping thw world
+                Join the movement:
               </span>
-                            <span className='mt-2 text-zinc-700'>
-                It&apos;s that simple. Try out FoodFinder today
+                            <span className='mt-2 text-zinc-500'>
+                the battle against hunger and waste!
               </span>
                         </div>
                     </li>
@@ -120,13 +125,17 @@ export default function Home() {
                                 className='rounded-md bg-white p-0 sm:p-8 md:p-5 shadow-2xl'
                                 autoPlay
                             >
-                            <source src="/videos/video.mp4" type="video/mp4"/>
+                                <source src="/videos/video.mp4" type="video/mp4"/>
                                 Your browser does not support the videos.
                             </video>
                         </div>
                     </div>
                 </div>
             </div>
+            <div>
+
+            </div>
         </main>
+
     );
 }
