@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React from 'react';
 import {useState} from "react";
 import {Home, Eye, EyeOff, Apple} from 'lucide-react';
@@ -17,7 +16,6 @@ import {Label} from "@/components/ui/label"
 import Link from "next/link";
 import {Separator} from "@/components/ui/separator";
 import {useRouter} from "next/navigation";
-
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const router = useRouter();
@@ -47,8 +45,6 @@ const LoginPage = () => {
 
             if (response.ok) {
                 console.log('Login successful', data);
-                // Aquí debes manejar la respuesta exitosa, por ejemplo guardando el token
-                // y redirigiendo a la página del dashboard o página principal
                 router.push('/dashboard');
             } else {
                 console.error('Login failed', data);
@@ -59,6 +55,7 @@ const LoginPage = () => {
             alert('Network error');
         }
     };
+
     return (
         <div className="flex min-h-screen items-center justify-center px-4">
             <Card className="w-[350px]">
@@ -70,7 +67,7 @@ const LoginPage = () => {
                             <p className="text-3xl font-bold">dLinker</p>
                         </aside>
                         <div className="absolute top-0 left-0 p-4">
-                            <Link href="/public"><Home/></Link>
+                            <Link href="/"><Home/></Link>
                         </div>
                     </Link>
                     <br/>
@@ -79,15 +76,15 @@ const LoginPage = () => {
                     <CardDescription>Welcome back.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="email">Email</Label>
-                                <Input type="email" id="email" placeholder="example@email.com"/>
+                                <Input type="email" id="email" name="email" placeholder="example@email.com" value={formData.email} onChange={handleChange}/>
                             </div>
                             <div className="flex flex-col space-y-1.5 relative">
                                 <Label htmlFor="password">Password</Label>
-                                <Input type={showPassword ? "text" : "password"} id="password" placeholder="Password"/>
+                                <Input type={showPassword ? "text" : "password"} id="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange}/>
                                 <span className="absolute inset-y-8 right-0 flex items-center pr-3">
                                     <button type="button" onClick={togglePasswordVisibility}
                                             className="text-gray-500 hover:text-gray-700">
@@ -96,6 +93,7 @@ const LoginPage = () => {
                                 </span>
                             </div>
                         </div>
+                        <Button type="submit" className="w-full mt-4"><Link href="/dashboard">Sign-in</Link></Button>
                     </form>
                 </CardContent>
                 <CardFooter className="flex justify-between items-center">
@@ -107,9 +105,6 @@ const LoginPage = () => {
                             <Link href='/sign-up'>Sign Up</Link>
                         </Button>
                     </div>
-                    <Button className="group-hover:bg-amber-400" type="submit">
-                        <Link href="/dashboard" className="text-white">Sign in</Link>
-                    </Button>
                 </CardFooter>
             </Card>
         </div>

@@ -15,19 +15,8 @@ const Navbar = async (props: Props) => {
                 <p className="text-3xl font-bold">dLinker</p>
             </aside>
             <nav className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
-                <ul className="flex items-center gap-4 list-none">
-                    <li>
-                        <Link href="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/shelters">Shelters</Link>
-                    </li>
-
-                    <li>
-                        <Link href="/locate">Locate</Link>
-                    </li>
-
-                </ul>
+                
+                   
             </nav>
             <aside className="flex items-center gap-4">
                 <Button variant="ghost">
