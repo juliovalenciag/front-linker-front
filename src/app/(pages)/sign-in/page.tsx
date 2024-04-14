@@ -16,13 +16,49 @@ import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
 import Link from "next/link";
 import {Separator} from "@/components/ui/separator";
+import {useRouter} from "next/navigation";
 
 const LoginPage = () => {
-
     const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
 
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target;
+        setFormData(prevState => ({...prevState, [name]: value}));
+    };
 
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('https://foodlinker-921f63db6b7b.herokuapp.com/token', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    email: formData.email,
+                    password: formData.password,
+                }),
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                console.log('Login successful', data);
+                // Aquí debes manejar la respuesta exitosa, por ejemplo guardando el token
+                // y redirigiendo a la página del dashboard o página principal
+                router.push('/dashboard');
+            } else {
+                console.error('Login failed', data);
+                alert(data.message || 'Invalid username or password');
+            }
+        } catch (error) {
+            console.error('Network error', error);
+            alert('Network error');
+        }
+    };
     return (
         <div className="flex min-h-screen items-center justify-center px-4">
             <Card className="w-[350px]">
@@ -34,7 +70,7 @@ const LoginPage = () => {
                             <p className="text-3xl font-bold">dLinker</p>
                         </aside>
                         <div className="absolute top-0 left-0 p-4">
-                            <Link href="/"><Home/></Link>
+                            <Link href="/public"><Home/></Link>
                         </div>
                     </Link>
                     <br/>
@@ -71,7 +107,7 @@ const LoginPage = () => {
                             <Link href='/sign-up'>Sign Up</Link>
                         </Button>
                     </div>
-                    <Button className="group-hover:bg-amber-400">
+                    <Button className="group-hover:bg-amber-400" type="submit">
                         <Link href="/dashboard" className="text-white">Sign in</Link>
                     </Button>
                 </CardFooter>
